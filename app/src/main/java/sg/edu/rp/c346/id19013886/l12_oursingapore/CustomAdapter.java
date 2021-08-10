@@ -40,7 +40,7 @@ public class CustomAdapter extends ArrayAdapter {
         TextView tvDescription = rowView.findViewById(R.id.tvDescription);
         TextView tvSquarekm = rowView.findViewById(R.id.tvSquarekm);
         RatingBar rbStars = rowView.findViewById(R.id.rbStars);
-        //ImageView newImg = rowView.findViewById(R.id.ivNew);
+        ImageView wowImg = rowView.findViewById(R.id.ivNew);
 
         // Obtain the Android Version information based on the position
         Island currentObj = islandList.get(position);
@@ -50,13 +50,13 @@ public class CustomAdapter extends ArrayAdapter {
         tvSquarekm.setText(String.valueOf(currentObj.getSquarekm()));
         rbStars.setRating(currentObj.getStars());
         tvDescription.setText(currentObj.getDescription());
-        //newImg.setImageResource(R.drawable.new_image);
+        wowImg.setImageResource(R.drawable.wow_image);
 
-        /*if (currentObj.getYearReleased() >= 2019) {
-            newImg.setVisibility(View.VISIBLE);
+        if (currentObj.getSquarekm() >= 3) {
+            wowImg.setVisibility(View.VISIBLE);
         } else {
-            newImg.setVisibility(View.INVISIBLE);
-        }*/
+            wowImg.setVisibility(View.INVISIBLE);
+        }
 
         return rowView;
     }

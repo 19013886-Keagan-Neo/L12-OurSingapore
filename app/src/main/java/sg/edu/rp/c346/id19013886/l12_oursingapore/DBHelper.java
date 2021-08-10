@@ -95,13 +95,6 @@ public class DBHelper extends SQLiteOpenHelper {
         String condition = COLUMN_STARS + ">= ?";
         String[] args = {String.valueOf(starsFilter)};
 
-        //String selectQuery = "SELECT " + COLUMN_ID + ","
-        //            + COLUMN_TITLE + ","
-        //            + COLUMN_SINGERS + ","
-        //            + COLUMN_YEAR + ","
-        //            + COLUMN_STARS
-        //            + " FROM " + TABLE_SONG;
-
         Cursor cursor;
         cursor = db.query(TABLE_ISLAND, columns, condition, args, null, null, null, null);
 
